@@ -1,0 +1,23 @@
+<h1>Name: {{ .Name }}</h1>
+<h1>Description: {{ .Description }}</h1>
+<h1>Attributes:</h1>
+<h2>
+	{{with .GoodAttribute}}
+	{{ range . }}
+		<p> {{.Name}} - 
+		{{.Value}}</p>
+
+	{{ end }} 
+
+{{ end }}
+</h2>
+
+<h1>Links:</h1>
+	{{with .CoverImage}}
+	{{ range . }}
+		<p> {{.Name}} - 
+		<a href={{.Link}}>{{.Link}}</a></p>
+
+	{{ end }} 
+
+{{ end }}
